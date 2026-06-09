@@ -88,11 +88,9 @@ docker rmi my-image
 ## 📚 Learning Resources
 
 - [Docker Official Docs](https://docs.docker.com/)
-- [Play with Docker](https://labs.play-with-docker.com/) — free browser-based sandbox
-- [Docker for Beginners — FreeCodeCamp](https://www.freecodecamp.org/news/the-docker-handbook/)
 
+- [Docker for Beginners — FreeCodeCamp](https://youtu.be/rjjES5IsPdg?si=ejOHrN44yHytE17x)
 
----
 
 ## 🤝 Contributing
 
