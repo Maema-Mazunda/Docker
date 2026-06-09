@@ -1,0 +1,48 @@
+#########Demo Installing Docker
+
+
+The installation steps are found here:
+"https://docs.docker.com/engine/install/ubuntu/"
+##########
+
+
+
+#Update the existing packages on the Ubuntu EC2 Instances
+sudo apt update
+
+## Install prerequisite packages which allows apt utilize HTTPS:
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+
+#Add GPG Key for the official Docker repo to the Ubuntu system:
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add repository to Apt sources:
+echo \ 
+  "deb [arch=(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
+  asc] hhtps://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU CODENAME:-$VERSION CODENAME}")
+  stable" | \ 
+  sudo tee /etc/apt/sources.list.d/docker.list > dev/null
+
+#Update the database woth the docker packages from the added repo:
+sudo apt-get update
+
+#Install the DOcker packages
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# Docker should now be installed, the daemon started, and the process enabled to start on boot, To verify:
+sudo systemctl status docker
+
+#If not started, use the command
+sudo systemctl start docker
+
+#THen validate using
+sudo systemctl status docker
+
+#To enssure docker starts automatically after each reboot or restart of the EC2 Ubuntu instance
+sudo systemctl enable docker
+
+#Now, run your first container to verify proper installation 
+sudo docker run hello-world
