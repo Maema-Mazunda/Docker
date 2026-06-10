@@ -1,0 +1,11 @@
+##### dokcer satrt 
+
+##Now lets go ahead and start the container we just created
+
+$docker start cont1 #starts the container 
+
+
+##open another terminal to the AWS ubuntu EC2 instance 
+
+
+#Verify the container is running 

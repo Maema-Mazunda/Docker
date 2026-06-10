@@ -1,0 +1,6 @@
+##### Docker Create
+
+# Lets's create an nginix container with the name cont1
+
+$docker create --name cont1 nginix
+#To verify that the contasiner is created, we can use docker ps-a command
